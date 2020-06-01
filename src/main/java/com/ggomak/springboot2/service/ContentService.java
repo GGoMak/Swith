@@ -6,7 +6,6 @@ import com.ggomak.springboot2.repository.ContentRepository;
 import com.ggomak.springboot2.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import sun.security.x509.IPAddressName;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
