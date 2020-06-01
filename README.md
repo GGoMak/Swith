@@ -21,6 +21,7 @@ compile('org.springframework.boot:spring-boot-starter-data-jpa')
 // Database
 compile('com.h2database:h2')
 compile('mysql:mysql-connector-java')
+compile('org.modelmapper:modelmapper:2.3.7')
 
 // Security, OAuth
 compile('org.springframework.boot:spring-boot-starter-oauth2-client')
@@ -35,10 +36,24 @@ compileOnly('org.projectlombok:lombok')
 testCompile('org.springframework.boot:spring-boot-starter-test')
 ```
   
+## Usage
+
+  - 인메모리 DB가 아닌 mySQL DB사용 시 application.properties 파일 수정
+```$xslt
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://{주소}:3306/{Database이름}?serverTimezone=UTC&characterEncoding=UTF-8
+spring.datasource.username={DB 아이디}
+spring.datasource.password={DB 패스워드}
+```
+  - src/main/java/com/ggomak/springboot2/service/ContentService.java 파일에서 Content 경로 수정
+```
+File file = new File("{Content 폴더 경로명}" + content.getContentName() + ".mp4");
+``` 
+  
 ## v1.0
   
   - 게시판 작성자 목록 추가
-  - 로그인, 로그아웃 버튼 추가
+  - 로그인, 로그아웃 버튼 추가드
   - 로그인 폼 개선
   - 소셜로그인(구글, 페이스북, 네이버, 카카오)기능 추가
   
