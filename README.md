@@ -38,6 +38,16 @@ testCompile('org.springframework.boot:spring-boot-starter-test')
   
 ## Usage
 
+  - Linux(Ubuntu)
+```$xslt
+mkdir Swith
+cd Swith
+git clone https://github.com/GGoMak/Swith.git
+gradle build
+cd build/libs
+java -jar build/libs/{프로젝트명}-1.0-SNAPSHOT.jar
+```
+
   - 인메모리 DB가 아닌 mySQL DB사용 시 application.properties 파일 수정
 ```$xslt
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
