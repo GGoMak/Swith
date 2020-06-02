@@ -40,8 +40,6 @@ testCompile('org.springframework.boot:spring-boot-starter-test')
 
   - Linux(Ubuntu)
 ```$xslt
-mkdir Swith
-cd Swith
 git clone https://github.com/GGoMak/Swith.git
 gradle build
 cd build/libs
