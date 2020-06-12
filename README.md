@@ -88,6 +88,13 @@ File file = new File("{Content 폴더 경로명}" + content.getContentName() + "
   - User session 정보 및 Content session 정보 추가
   - 집중도 처리 restAPI 구현
   
+## Log 정보
+
+  - 0001 : Request Contents
+  - 0002 : Save Data
+  - 0003 : Load Data(Reqeust Concentrate Data)
+  - 0004 : No Contents Session
+  
 ## 구현 예정
   
   - 로그인 예외처리
