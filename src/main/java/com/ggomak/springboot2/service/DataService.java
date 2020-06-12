@@ -10,6 +10,8 @@ import com.ggomak.springboot2.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -20,8 +22,12 @@ public class DataService {
     private final DataRepository dataRepository;
     private final UserRepository userRepository;
     private final ContentRepository contentRepository;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
     public void save(String sessionAddress, String concendata){
+
+        Date date = new Date();
+        String strDate = dateFormat.format(date);
 
         Optional<User> user = userRepository.findBySessionAddress(sessionAddress);
 
@@ -29,7 +35,7 @@ public class DataService {
             Long contentId = user.get().getSessionContent();
 
             if(contentId == null){
-                System.out.println("no session content");
+                System.out.println(strDate + "   LOG 0004 --- [     system log]" + "No Contents Session : { User : " + user.get().getEmail() + " }");
                 return;
             }
 
@@ -46,6 +52,8 @@ public class DataService {
                 data.setData(data.getConcentrateData().concat(concendata+":"));
                 dataRepository.save(data);
             }
+
+            System.out.println(strDate + "   LOG 0002 --- [     system log]" + "Save Concentrate Data: { User : " + user.get().getEmail() + " }");
         }
         catch(NoSuchElementException e){
             System.out.println("no session content");
@@ -55,6 +63,9 @@ public class DataService {
 
     public String load(SessionUser sessionUser, Long contentNumber){
 
+        Date date = new Date();
+        String strDate = dateFormat.format(date);
+
         Optional<User> user = userRepository.findByEmailAndSocialType(sessionUser.getEmail(), sessionUser.getSocialType());
         Content content = contentRepository.findByContentNumber(contentNumber);
 
@@ -63,6 +74,8 @@ public class DataService {
         if(data == null){
             return null;
         }
+
+        System.out.println(strDate + "   LOG 0003 --- [     system log]" + "Request Concentrate Data: { User : " + user.get().getEmail() + " }");
 
         return data.getConcentrateData();
     }
