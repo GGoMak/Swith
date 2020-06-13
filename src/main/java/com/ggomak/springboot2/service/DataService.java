@@ -35,7 +35,7 @@ public class DataService {
             Long contentId = user.get().getSessionContent();
 
             if(contentId == null){
-                System.out.println(strDate + "   LOG 0004 --- [     system log]" + "No Contents Session : { User : " + user.get().getEmail() + " }");
+                System.out.println(strDate + "   LOG 0004 --- [     system log]" + "No Contents Session: { User : " + user.get().getEmail() + " }");
                 return;
             }
 
@@ -56,7 +56,7 @@ public class DataService {
             System.out.println(strDate + "   LOG 0002 --- [     system log]" + "Save Concentrate Data: { User : " + user.get().getEmail() + " }");
         }
         catch(NoSuchElementException e){
-            System.out.println("no session content");
+            System.out.println(strDate + "   LOG 0004 --- [     system log]" + "No Contents Session: { User : " + user.get().getEmail() + " }");
         }
 
     }
