@@ -45,7 +45,7 @@ public class Springboot2Application implements WebMvcConfigurer {
 
 			IntStream.rangeClosed(1, 8).forEach(index ->
 					contentRepository.save(Content.builder()
-							.contentName("Data")
+							.contentName(String.valueOf(index))
 							.contentNumber(Long.parseLong(String.valueOf(index)))
 							.contentSize(Integer.toUnsignedLong(100))
 							.contentTime(Integer.toUnsignedLong(200))
