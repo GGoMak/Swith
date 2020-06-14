@@ -53,10 +53,10 @@ public class DataService {
                 dataRepository.save(data);
             }
 
-            System.out.println(strDate + "   LOG 0002 --- [     system log]" + "Save Concentrate Data: { User : " + user.get().getEmail() + " }");
+            System.out.println(strDate + "   LOG 0002 --- [     system log]" + " Save Concentrate Data: { User : " + user.get().getEmail() + " } " + "{ Content ID: " + contentId + " } { Value: " + concendata + " }");
         }
         catch(NoSuchElementException e){
-            System.out.println(strDate + "   LOG 0004 --- [     system log]" + "No Contents Session: { User : " + user.get().getEmail() + " }");
+            System.out.println(strDate + "   LOG 0004 --- [     system log]" + " No Contents Session: { User : " + user.get().getEmail() + " }");
         }
 
     }
@@ -75,7 +75,7 @@ public class DataService {
             return null;
         }
 
-        System.out.println(strDate + "   LOG 0003 --- [     system log]" + "Request Concentrate Data: { User : " + user.get().getEmail() + " }");
+        System.out.println(strDate + "   LOG 0003 --- [     system log]" + " Request Concentrate Data: { User : " + user.get().getEmail() + " }");
 
         return data.getConcentrateData();
     }
