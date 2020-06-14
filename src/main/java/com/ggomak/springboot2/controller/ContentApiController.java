@@ -39,7 +39,7 @@ public class ContentApiController {
 
         if(user != null){
             mainService.regist(sessionAddress, user);
-            System.out.println(strDate +"   LOG 0001 --- [     system log] Request Contents : { Session Address : " + sessionAddress + " }\t{ User : " + user.getEmail() + " }");
+            System.out.println(strDate +"   LOG 0001 --- [     system log] Request Contents 000" + content_id + ": { Session Address : " + sessionAddress + " }\t{ User : " + user.getEmail() + " }");
         }
 
         long id = Long.parseLong(content_id);
