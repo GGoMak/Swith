@@ -1,7 +1,7 @@
 # SpringBoot Project
 
   - 책에서 만든 프로젝트을 기반으로 여러 기능을 추가 구현
-  - Demo 영상 : https://youtu.be/O2f0Jn-o8eA
+  - Demo 영상 : https://youtu.be/FNsRydIq_3w
 
 ## Version
 
